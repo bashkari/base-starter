@@ -28,14 +28,14 @@ class ProductionConfig(Config):
     REMEMBER_COOKIE_HTTPONLY = True
     REMEMBER_COOKIE_DURATION = 3600
 
-    # PostgreSQL database
+    # mysql database
     SQLALCHEMY_DATABASE_URI = '{}://{}:{}@{}:{}/{}'.format(
         os.getenv('DB_ENGINE'   , 'mysql'),
-        os.getenv('DB_USERNAME' , 'appseed_db_usr'),
-        os.getenv('DB_PASS'     , 'pass'),
+        os.getenv('DB_USERNAME' , 'dev_01'),
+        os.getenv('DB_PASS'     , '1234!4321'),
         os.getenv('DB_HOST'     , 'localhost'),
         os.getenv('DB_PORT'     , 3306),
-        os.getenv('DB_NAME'     , 'appseed_db')
+        os.getenv('DB_NAME'     , 'db_01')
     ) 
 
 class DebugConfig(Config):

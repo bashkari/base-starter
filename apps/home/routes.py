@@ -12,8 +12,17 @@ from jinja2 import TemplateNotFound
 @blueprint.route('/index')
 @login_required
 def index():
+    data = [["text1",12,13],["text2",22,23],["text3",32,33],["text4",42,43]]
 
-    return render_template('home/index.html', segment='index')
+    return render_template('home/index.html', data = data, segment='index')
+
+
+@blueprint.route('/table')
+@login_required
+def table():
+    data = [["text1",12,13],["text2",22,23],["text3",32,33],["text4",42,43]]
+
+    return render_template('home/table.html', data = data, segment='index')
 
 
 @blueprint.route('/<template>')
